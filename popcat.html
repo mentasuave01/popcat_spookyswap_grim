@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SpookyPOP</title>
+  <link rel="icon"  href="01op.png">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script>
+      
+      let i=0;
+      var pop = new Audio('pop.ogg');
+      var catpop1 = () =>{
+                const popcat = document.getElementById("popcat")
+                popcat.src= "02op.png";
+                pop.play();
+                console.log(i)
+                i++;
+                //update the counter div
+                let counter = document.getElementById("counter");
+                counter.innerHTML = i;
+                
+                counter.classList.remove('animate__animated', 'animate__bounceIn');
+                
+
+            }
+        var catpop0 = () =>{
+                     const popcat = document.getElementById("popcat")
+                    popcat.src= "01op.png";
+                    counter.classList.add('animate__animated', 'animate__bounceIn');
+                    console.log(i)
+                    
+                    
+    
+                }
+
+  </script>
+  
+  <link href="output.css" rel="stylesheet">
+</head>
+<body>
+  <main class="grid grid-flow-row grid-cols-4 select-none
+  h-min-screen w-min-screen bg-fuchsia-600 h-screen w-screen  "onpointerdown="catpop1()" onpointerup="catpop0()"> 
+      <div class="flex"></div>
+      <div class="col-span-2 flex flex-col min-w-[500px]  justify-between align-middle items-center  	" >
+        <div id=counter class="text-white text-8xl animate__animated animate__bounce"></div>
+        <img class="h-[90vh] w-fit" id="popcat"  src="01op.png" alt="Popcat">
+        
+      </div>
+      
+      
+      <div class="flex w-20"></div>
+      
+  </main>
+</body>
+</html>
